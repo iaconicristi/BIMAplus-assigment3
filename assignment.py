@@ -30,17 +30,11 @@ for i in range(numberOfPoints):
 
 #Initial values
 area = 0
-#print(area)
 xStaticMoment = 0
-#print(xStaticMoment)
 yStaticMoment = 0
-#print(yStaticMoment)
 xInertia = 0
-#print(xInteria)
 yInertia = 0
-#print(yIntertia)
 xyInertia = 0
-#print(xyIntertia)
 
 #summing up the rest of the points: 
 for i in range(numberOfPoints):
@@ -50,17 +44,12 @@ for i in range(numberOfPoints):
     yI1 = coord[i][1]
 
     area = area + (xI1 + xI)*(yI1-yI)
-    #print("area is: " + str(area))
     xStaticMoment = xStaticMoment + (xI1 - xI)*(yI1**2 + yI*yI1 + yI**2)
-    #print("xstatic moment is: " + str(xStaticMoment))
     yStaticMoment = yStaticMoment + (yI1 - yI)*(xI1**2 + xI*xI1 + xI**2)
-    #print("y static moment is: " + str(yStaticMoment))
     xInertia = xInertia + (xI1 - xI)*(yI1**3 + (yI1**2)*yI + yI1*(yI**2) + yI**3)
-    #print("xInertia is " + str(xInteria))
     yInertia = yInertia + (yI1 - yI)*(xI1**3 + (xI1**2)*xI + xI1*(xI**2) + xI**3)
-    #print("yInertia is " + str(yInteria))
     xyInertia = xyInertia + (yI1 - yI)*((yI1*(3*xI1**2 + 2*xI1*xI + xI**2)) + yI*(3*xI**2 + 2*xI1*xI + xI1**2))
-    #print("xyInertia is: " + str(xyInertia))
+
 
 #print geometric characteristics:
 print()
